@@ -5,7 +5,7 @@ module TrivialLogFormatter
 
   class Formatter < ::Logger::Formatter
     FORMAT = "\033[%sm[%s#%d] %5s -- %s: %s\033[0m\n"
-    SEVERITY_COLOR_MAP = {:debug => '0;37', :info => '32', :warn => '33', :error => '31', :fatal => '31', :unknown => '37'}
+    SEVERITY_COLOR_MAP = {:debug => '0', :info => '32', :warn => '33', :error => '31', :fatal => '31', :unknown => '0;37'}
 
     def call(severity, time, progname, msg)
       msg = '' if msg.nil?
